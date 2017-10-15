@@ -1,0 +1,9 @@
+2017-10-15 19:27:44  [ main:0 ] - [ DEBUG ]  程序开始执行！
+2017-10-15 19:27:55  [ main:11096 ] - [ DEBUG ]  D:\project\agenda\user\ly1.txt
+2017-10-15 19:30:32  [ main:168040 ] - [ DEBUG ]  D:\project\agenda\user\ly1.txt
+2017-10-15 19:30:36  [ main:171308 ] - [ DEBUG ]  D:\project\agenda\user\ly1.txt
+2017-10-15 19:31:10  [ main:0 ] - [ DEBUG ]  程序开始执行！
+2017-10-15 19:32:09  [ main:58980 ] - [ DEBUG ]  D:\project\agenda\user\ly1.txt
+2017-10-15 19:40:35  [ main:1 ] - [ DEBUG ]  程序开始执行！
+2017-10-15 19:40:56  [ main:20956 ] - [ DEBUG ]  D:\project\agenda\user\ly1.txt
+2017-10-15 19:40:56  [ main:20958 ] - [ DEBUG ]  {"email":"123","password":"ly1","phone":"123","username":"ly1"}
