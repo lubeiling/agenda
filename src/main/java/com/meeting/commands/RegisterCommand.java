@@ -19,13 +19,11 @@ import org.apache.commons.cli.ParseException;
 public class RegisterCommand implements CommandIn {
     User user =new User();
     private UserMapper userMapper=new UserMapperImpl();
-
     public void simpleHelp() {
         System.out.printf("%-20s","register");
-        System.out.println("用户注册");
+        System.out.println("用户注册::register -u ly4 -p ly4 -e 11233@qq.com -pn 11231223");
 
     }
-
 
     public boolean getOptions(String[] args) {
         Options options = new Options();

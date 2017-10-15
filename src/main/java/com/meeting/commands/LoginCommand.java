@@ -18,7 +18,7 @@ public class LoginCommand implements CommandIn {
 
     public void simpleHelp() {
         System.out.printf("%-20s","login");
-        System.out.println("用户登陆");
+        System.out.println("用户登陆:login -u ly1 -p ly1");
     }
 
 
