@@ -6,6 +6,7 @@ import com.meeting.mapper.mapperimpl.AgendaMapperImpl;
 import com.meeting.mapper.mapperimpl.UserMapperImpl;
 import com.meeting.pojo.Agenda;
 import com.meeting.pojo.User;
+import com.meeting.utils.AgendaUtil;
 import com.meeting.utils.Login;
 import org.apache.commons.cli.*;
 
@@ -117,6 +118,9 @@ public class CreateAgendaCommand implements CommandIn {
     @Override
     public void excute() {
         if(Login.isLogin()) {
+            if(agendaMapper.findAgendaByTittle(agenda.getTitle())!=null){
+                System.out.println("会议重复！");
+            }
             boolean flag=true;
             List<User> userList=new ArrayList<User>();
             agenda.setInitiatorName(Login.getUser().getUsername());
@@ -126,7 +130,7 @@ public class CreateAgendaCommand implements CommandIn {
                 User user=userMapper.findUserByUserName(username);
                 if(user!=null) {
                     userList.add(user);
-                    if (!isAttend(user, agenda)) {
+                    if (!AgendaUtil.isAttend(user, agenda)) {
                         System.out.println(username + "这个用户不能参加");
                         flag= false;
                     }
@@ -175,32 +179,6 @@ public class CreateAgendaCommand implements CommandIn {
     @Override
     public boolean checkParameters() {
         return true;
-    }
-
-
-    private boolean isAttend(User user,Agenda agenda) {
-
-        if(user.getAttendgendas()==null) return true;
-        for (Agenda agendal :
-                user.getAttendgendas()){
-
-            if(isInner(agendal.getStarttime().getTime(),agenda.getStarttime().getTime(),agenda.getEndtime().getTime())){
-                return false;
-            }
-            if(isInner(agendal.getEndtime().getTime(),agenda.getStarttime().getTime(),agenda.getEndtime().getTime())){
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private boolean isInner(long time, long time1, long endtime) {
-
-        if(time>=time1 && time<=endtime){
-            return true;
-        }else {
-            return false;
-        }
     }
 
 
