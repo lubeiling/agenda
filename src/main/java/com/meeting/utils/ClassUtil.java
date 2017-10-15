@@ -212,6 +212,7 @@ public class ClassUtil {
             CommandIn command=(CommandIn)Class.forName(refereceName).newInstance();
             return command;
         } catch (Exception e) {
+            System.out.println("指令名输入错误，请参考帮助");
            HelpUtil.printHelp();
            return null;
         }
