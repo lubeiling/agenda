@@ -22,7 +22,7 @@ import java.util.List;
  * Time: 19:58
  * Description:
  */
-public class createAgendaCommand implements CommandIn {
+public class CreateAgendaCommand implements CommandIn {
 
     Agenda agenda =new Agenda();
     UserMapper userMapper=new UserMapperImpl();
